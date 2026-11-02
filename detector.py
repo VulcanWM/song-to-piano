@@ -17,7 +17,6 @@ def detect_chord_normal(audio, sample_rate, threshold_float):
 
     # detect chord
     pitch_classes = {midi % 12 for midi in midi_notes}
-    # print("detected pitch classes:", pitch_classes)
 
     for root in range(12):
         major = {(root + interval) % 12 for interval in [0, 4, 7]}
@@ -42,7 +41,6 @@ def detect_chord_weighted(audio, sample_rate, threshold_float):
 
         pitch_strengths[pitch_class] += magnitude
 
-    print(pitch_strengths)
     # detect chord
 
     chord_strengths = []
